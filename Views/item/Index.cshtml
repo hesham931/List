@@ -1,0 +1,27 @@
+@model IEnumerable<List.Models.Item>
+<a asp-action="Create" class="btn btn-primary mb-2">Create New Item</a>
+  @if(Model.Count()>0){
+      <table class="table table-striped table-hover table-bordered">
+        <thead>
+            <tr class = "bg-dark text-white">
+                <th scope="col">Item Name</th>
+                <th scope="col">Brrower</th>
+                <th scope="col">Lender</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model){
+                <tr>
+                <th scope="row">@item.ItemName</th>
+                <td>@item.Brrower</td>
+                <td>@item.Lender</td>
+                <td><a asp-action="Edit" asp-route-Id="@item.id" class = "btn btn-success mr-1">Edit</a><a asp-action="Delete" asp-route-Id="@item.id" class = "btn btn-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    }
+      else{
+          <p>No data found!</p>
+      }

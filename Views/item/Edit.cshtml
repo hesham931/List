@@ -1,0 +1,12 @@
+@model List.Models.Item
+<form name="submitForm" method="POST" asp-action="Edit" class="border border-info p-3" style="border-radius: 5px;" id="form">
+    <label asp-for="ItemName"></label>
+    <input type="text" asp-for="ItemName" class="form-control d-block m-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+    <label asp-for="Brrower"></label>
+    <input type="text" asp-for="Brrower" class="form-control d-block m-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+    <label asp-for="Lender"></label>
+    <input type="text" asp-for="Lender" class="form-control d-block m-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" >
+    <input type = "submit" class="m-2 btn btn-primary w-100" value="Update" id = "submit">
+    <a asp-action="index" class = "m-2 btn btn-danger w-100">Back</a>
+</form>
+<script src = "~/js/items.js"></script>
